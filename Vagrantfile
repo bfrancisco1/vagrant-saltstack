@@ -10,7 +10,7 @@ file_to_disk = './tmp/second-disk.vdi'
 Vagrant.configure("2") do |config|
   config.vm.define "drive" do |drive|
     drive.vm.box = "bento/centos-7.2"
-    drive.vm.hostname = "one.internal"
+    drive.vm.hostname = "salt-master.internal"
     drive.vm.network :private_network, ip: "192.168.101.10"
     drive.vm.provider "virtualbox" do |vb|
       unless File.exist?(file_to_disk)
@@ -19,9 +19,25 @@ Vagrant.configure("2") do |config|
       vb.memory = "1024"
       vb.customize ['storageattach', :id,  '--storagectl', 'SATA Controller', '--port', 1, '--device', 0, '--type', 'hdd', '--medium', file_to_disk]
     end
+    config.vm.provision "shell" do |s|
+      s.path = "volumes.sh"
+    end
   end
-  config.vm.provision :shell, path: "volumes.sh", keep_color: "true"
+  config.vm.define "minion1" do |minion1|
+    minion1.vm.box = "bento/centos-7.2"
+    minion1.vm.hostname = "minion1.internal"
+    minion1.vm.network :private_network, ip: "192.168.101.20"
+    minion1.vm.provider "virtualbox" do |vb2|
+      vb2.memory = "512"
+    end
+#    config.vm.provision "shell" do |s|
+#      s.path = "blank.sh"
+#    end
+  end
+    #config.vm.provision :shell, path: "volumes.sh", keep_color: "true"
 end
+
+
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.

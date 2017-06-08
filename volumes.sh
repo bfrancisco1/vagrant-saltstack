@@ -301,3 +301,6 @@ yum install salt-ssh -y
 
 #install salt cloud
 yum install salt-cloud -y
+
+#start salt-master service
+systemctl start salt-master.service
