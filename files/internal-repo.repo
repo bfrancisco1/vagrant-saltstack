@@ -1,0 +1,15 @@
+[internal-base]
+name=CentOS Base
+baseurl=http://centos7-repo.hps.md/repos/base/
+gpgcheck=0
+enabled=1
+[internal-updates]
+name=CentOS Updates
+baseurl=http://centos7-repo.hps.md/repos/updates
+gpgcheck=0
+enabled=1
+[internal-epel]
+name=CentOS Epel
+baseurl=http://centos7-repo.hps.md/repos/epel
+gpgcheck=0
+enabled=1
