@@ -1,4 +1,4 @@
-apache:
+httpd:
   pkg.installed: []
   service.running:
     - require:
