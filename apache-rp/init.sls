@@ -1,8 +1,9 @@
 httpd:
   pkg.installed: []
   service.running:
-    - require:
+    - watch:
       - pkg: httpd
+      - user: apache
 
 /var/www/html/index.html:
   file:
@@ -10,3 +11,11 @@ httpd:
     - source: salt://apache-rp/files/index.html
     - require:
       - pkg: httpd
+      - user: apache
+  user.present:
+    - uid: 87
+    - gid: 87
+    - home: /var/www/html
+    - shell: /bin/nologin
+    - require:
+      - group: apache
