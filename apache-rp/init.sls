@@ -3,7 +3,7 @@ httpd:
   group.present:
     - gid: 87
     - require:
-      - pkg: apache
+      - pkg: httpd
   user.present:
       - uid: 87
       - gid: 87
