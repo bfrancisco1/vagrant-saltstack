@@ -4,7 +4,7 @@ httpd:
     - require:
       - pkg: httpd
 
-/var/www/index.html:
+/var/www/html/index.html:
   file:
     - managed
     - source: salt://apache-rp/files/index.html
