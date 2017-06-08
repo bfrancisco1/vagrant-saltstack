@@ -1,16 +1,20 @@
-httpd:
-  pkg.installed: []
+apache-group:
   group.present:
     - gid: 87
-    - require:
-      - pkg: httpd
+
+apache:
   user.present:
-      - uid: 87
-      - gid: 87
-      - home: /var/www/html
-      - shell: /bin/nologin
-      - require:
-        - group: apache
+    - fullname: apache user
+    - shell: /bin/nologin
+    - home: /var/www/html
+    - uid: 87
+    - gid: 87
+    - require:
+      - group: apache-group
+
+
+httpd:
+  pkg.installed: []
   service.running:
     - watch:
       - pkg: httpd
