@@ -4,6 +4,17 @@ httpd:
     - watch:
       - pkg: httpd
       - user: apache
+  user.present:
+      - uid: 87
+      - gid: 87
+      - home: /var/www/html
+      - shell: /bin/nologin
+      - require:
+        - group: apache
+  group.present:
+    - gid: 87
+    - require:
+      - pkg: apache
 
 /var/www/html/index.html:
   file:
@@ -12,10 +23,3 @@ httpd:
     - require:
       - pkg: httpd
       - user: apache
-  user.present:
-    - uid: 87
-    - gid: 87
-    - home: /var/www/html
-    - shell: /bin/nologin
-    - require:
-      - group: apache
