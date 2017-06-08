@@ -1,9 +1,9 @@
 httpd:
   pkg.installed: []
-  service.running:
-    - watch:
-      - pkg: httpd
-      - user: apache
+  group.present:
+    - gid: 87
+    - require:
+      - pkg: apache
   user.present:
       - uid: 87
       - gid: 87
@@ -11,10 +11,11 @@ httpd:
       - shell: /bin/nologin
       - require:
         - group: apache
-  group.present:
-    - gid: 87
-    - require:
-      - pkg: apache
+  service.running:
+    - watch:
+      - pkg: httpd
+      - user: apache
+
 
 /var/www/html/index.html:
   file:
