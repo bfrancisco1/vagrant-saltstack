@@ -6,7 +6,7 @@ httpd:
 
 /var/www/index.html:
   file:
-    - managed:
+    - managed
     - source: salt://files/index.html
     - require:
       - pkg: httpd
