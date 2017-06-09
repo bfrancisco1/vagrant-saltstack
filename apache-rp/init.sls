@@ -1,5 +1,5 @@
 include:
-  - apache_conf
+  - apache
 
 apache-group:
   group.present:
