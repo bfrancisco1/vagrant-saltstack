@@ -1,4 +1,3 @@
-
 apache-group:
   group.present:
     - gid: 87
@@ -29,5 +28,5 @@ httpd:
       - user: apache
 
 enable-proxy-module:
-  apache_module.enabled:
+  apache_module.enable:
     - name: proxy
