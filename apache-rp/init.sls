@@ -6,7 +6,6 @@ apache:
   user.present:
     - fullname: apache user
     - shell: /bin/nologin
-    - uid: 87
     - gid: 87
     - require:
       - group: apache-group
