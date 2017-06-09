@@ -1,5 +1,5 @@
 common-pkgs:
-  pkg.installed:
+  pkg.latest:
     - names:
       - vim
       - wget
