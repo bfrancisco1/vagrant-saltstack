@@ -1,3 +1,6 @@
+include:
+  - apache_conf
+
 apache-group:
   group.present:
     - gid: 87
