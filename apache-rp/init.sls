@@ -1,5 +1,3 @@
-include:
-  - apache
 
 apache-group:
   group.present:
