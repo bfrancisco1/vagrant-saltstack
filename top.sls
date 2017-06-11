@@ -5,3 +5,5 @@ base:
   
   '*lb*':
     - apache
+  '*web*':
+    - enable-ius
