@@ -6,4 +6,4 @@ base:
   '*lb*':
     - apache
   '*web*':
-    - test-web
+    - nginx
