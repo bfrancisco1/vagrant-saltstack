@@ -6,4 +6,4 @@ base:
   '*lb*':
     - apache
   '*web*':
-    - enable-ius
+    - test-web
