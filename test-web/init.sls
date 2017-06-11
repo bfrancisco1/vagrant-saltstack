@@ -7,5 +7,5 @@ python2-pip:
 flask:
   pip.installed:
     - require:
-      - pkg: python-pip
+      - pkg: python2-pip
       - sls: enable-ius
