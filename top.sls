@@ -4,6 +4,6 @@ base:
     - internal-repo-state
   
   '*lb*':
-    - apache
+    - apache-rp
   '*web*':
     - nginx
