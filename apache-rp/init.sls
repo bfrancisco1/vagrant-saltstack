@@ -26,7 +26,3 @@ httpd:
     - require:
       - pkg: httpd
       - user: apache
-
-enable-proxy-module:
-  apache_module.enable:
-    - name: proxy
