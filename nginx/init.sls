@@ -11,9 +11,9 @@ run-nginx:
     - file: /etc/nginx/nginx.conf
     - pkg: nginx
 
-/etc/nginx/nginx.conf:
-  - file:
-    - managed
+conf-nginx:
+  file.managed:
+    - name: /etc/nginx/nginx.conf
     - source: salt://nginx/files/nginx.conf
     - user: root
     - group: root
