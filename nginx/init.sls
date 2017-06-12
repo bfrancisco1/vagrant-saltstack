@@ -22,7 +22,7 @@ conf-nginx:
       - pkg: nginx
 
 html-nginx:
-  - file.recurse:
+  file.recurse:
     - name: /var/www/html
     - source: salt://nginx/files/html
     - include_empty: True
