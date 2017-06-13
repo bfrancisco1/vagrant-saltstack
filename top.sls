@@ -8,4 +8,4 @@ base:
     - nginx
     - internal-repo-state
   '*client*':
-    - tenable-lce
+    - install-lce
