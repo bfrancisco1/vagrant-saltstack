@@ -1,4 +1,4 @@
-lce:
+tenable-lce:
   '4.4.0':
     full_name: 'Tenable LCE Installer'
     installer: 'salt://installs/lce_client-4.4.0-windows_2008_x64.msi'
