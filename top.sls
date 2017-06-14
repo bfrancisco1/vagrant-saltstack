@@ -7,5 +7,7 @@ base:
   '*web*':
     - nginx
     - internal-repo-state
-  '*client*':
+   'os:Windows':
+    - match: grain
+    - install-vscc-2010
     - install-lce
