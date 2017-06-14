@@ -1,4 +1,5 @@
 install-tenable-lce:
   pkg.installed:
-    - name: ms-vsc-2010-sp1
     - name: tenable-lce
+    - require:
+      - pkg: install-vscc-2010
